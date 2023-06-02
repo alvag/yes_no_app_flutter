@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/presentation/widgets/chat/my_message_bubble.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -10,10 +11,12 @@ class ChatScreen extends StatelessWidget {
         leading: const Padding(
           padding: EdgeInsets.all(4.0),
           child: CircleAvatar(
-            backgroundImage: NetworkImage('https://www.ser.pe/wp-content/uploads/2021/10/avatar-ser.png'),
+            backgroundImage: NetworkImage(
+                'https://www.ser.pe/wp-content/uploads/2021/10/avatar-ser.png'),
           ),
         ),
         title: const Text('Mi amor ♥️'),
+        centerTitle: false,
       ),
       body: _ChatView(),
     );
@@ -21,7 +24,6 @@ class ChatScreen extends StatelessWidget {
 }
 
 class _ChatView extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -33,7 +35,7 @@ class _ChatView extends StatelessWidget {
               child: ListView.builder(
                 itemCount: 100,
                 itemBuilder: (context, index) {
-                  return Text('Indice: $index');
+                  return const MyMessagBubble();
                 },
               ),
             ),
